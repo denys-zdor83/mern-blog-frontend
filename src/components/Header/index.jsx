@@ -5,10 +5,10 @@ import Button from '@mui/material/Button';
 import styles from './Header.module.scss';
 import Container from '@mui/material/Container';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout, selectAuth } from '../../redux/slices/auth';
+import { logout, selectIsAuth } from '../../redux/slices/auth';
 
 export const Header = () => {
-  const isAuth = useSelector(selectAuth);
+  const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
 
   const onClickLogout = () => {
@@ -28,7 +28,7 @@ export const Header = () => {
           <div className={styles.buttons}>
             {isAuth ? (
               <>
-                <Link to="/posts/create">
+                <Link to="/add-post">
                   <Button variant="contained">Написать статью</Button>
                 </Link >
                 <Button onClick={onClickLogout} variant="contained" color="error">

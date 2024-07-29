@@ -7,13 +7,13 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 
-import { fetchRegister, selectAuth } from '../../redux/slices/auth';
+import { fetchRegister, selectIsAuth } from '../../redux/slices/auth';
 
 import styles from './Login.module.scss';
 import { Navigate } from 'react-router-dom';
 
 export const Registration = () => {
-  const isAuth = useSelector(selectAuth);
+  const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
   const {
     register,
