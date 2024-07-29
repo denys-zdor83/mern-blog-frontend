@@ -21,7 +21,6 @@ export const Home = () => {
     dispatch(fetchTags())
   }, [])
 
-
   return (
     <>
       <Tabs style={{ marginBottom: 15 }} value={0} aria-label="basic tabs example">
@@ -35,7 +34,7 @@ export const Home = () => {
             <Post
               id={obj._id}
               title={obj.title}
-              imageUrl={obj.imageUrl}
+              imageUrl={obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ''}
               user={obj.user}
               createdAt={obj.createdAt}
               viewsCount={obj.viewsCount}
